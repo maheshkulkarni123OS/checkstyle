@@ -277,6 +277,29 @@ public class FooTest {
         <source>
 &lt;module name=&quot;FinalClass&quot;/&gt;
         </source>
+        <p>
+          Examples : 
+          class Parent{
+Parent(){
+}
+public static void main(String args[]){
+Parent s = new Parent();
+} } // ok
+
+class Parent{
+private Parent(){
+}
+public static void main(String args[]){
+Parent s = new Parent();
+} } // violation, error: Parent() has private access in Parent
+
+final class Parent{
+Parent(){
+}
+public static void main(String args[]){
+Parent s = new Parent();
+} } // violation, error: cannot inherit from final Parent
+        </p>
       </subsection>
 
       <subsection name="Example of Usage" id="FinalClass_Example_of_Usage">
